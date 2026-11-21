@@ -1,11 +1,9 @@
-#include "captures/camera.hpp"
+#include "app.hpp"
 
 int main() {
-    
-    Camera cam;
+    App app;
 
-    cam.open_camera();;
-
+    app.run();
 
     return 0;
 }
