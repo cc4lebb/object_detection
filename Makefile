@@ -1,8 +1,10 @@
 # Compiler and flags
 CXX      := g++
 CXXFLAGS := -std=c++17 -Wall -Wextra -Wpedantic -Werror -O2 -g -MMD -MP
+CXXFLAGS += $(shell pkg-config --cflags opencv4)
 LDFLAGS  :=
 LDLIBS   :=
+LDLIBS   += $(shell pkg-config --libs opencv4)
 
 # Project structure
 SRCDIR := src
