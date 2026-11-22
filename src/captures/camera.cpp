@@ -11,24 +11,21 @@ bool Camera::open_camera(Cams cam_id){
         return false;
     };
 
-    is_running = true;
-
-    while(is_running) {
-        cap >> frame;
-
-        if (frame.empty()){
-            std::cerr << "blank frame grabbed" << '\n';
-            break;
-        }
-
-        cv::imshow("camera", frame);
-
-        if (cv::waitKey(10) == 27) { break; }
-    }
-
-    is_running = false;
-    cap.release();
-    cv::destroyAllWindows();
-
     return true;
 };
+
+bool Camera::read(cv::Mat& frame){
+    cap >> frame;
+    if (frame.empty()){
+        std::cerr << "blank frame grabbed" << '\n';
+        return false;
+    }
+
+    return true;
+}
+
+void Camera::close(){
+    cap.release();
+
+}
+

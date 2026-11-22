@@ -9,9 +9,10 @@ enum class Cams {
 
 class Camera {
     cv::VideoCapture cap;
-    cv::Mat frame;
-    bool is_running = false;
 
 public:
     bool open_camera(Cams cam_id = Cams::default_cam);
+    bool read(cv::Mat& frame);
+    void close();
+
 };

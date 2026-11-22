@@ -2,5 +2,5 @@
 
 class App {
 public:
-    void run();
+    bool run();
 };
