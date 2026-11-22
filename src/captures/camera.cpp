@@ -23,12 +23,12 @@ bool Camera::open_camera(Cams cam_id){
 
         cv::imshow("camera", frame);
 
-        if (cv::waitKey(10) == 27) {
-            break;
-        }
+        if (cv::waitKey(10) == 27) { break; }
     }
 
+    is_running = false;
     cap.release();
     cv::destroyAllWindows();
-    return false;
+
+    return true;
 };
