@@ -1,3 +1,9 @@
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+!.env.template
+
 # Executables
 /main
 *.exe
@@ -65,8 +71,3 @@ vcpkg_installed/
 Testing/
 .cache/
 
-# Environment variables & secrets
-.env
-.env.*
-!.env.example
-!.env.template
