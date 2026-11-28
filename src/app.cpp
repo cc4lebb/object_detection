@@ -26,6 +26,8 @@ bool App::run() {
         detector.draw_box(frame, target_box);
 
         cv::imshow("camera", frame);
+        cv::imshow("gray", gray);
+        cv::imshow("blur", blur);
         if (cv::waitKey(10) == 27) { break; }
         
     }
